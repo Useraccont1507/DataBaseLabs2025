@@ -117,4 +117,4 @@ Comments (child comments)
 
 **Верезей Ілля ІМ - 42**
 
-<img src="Lab1/Lab1BDScheme.drawio.png" alt="Схема" width="1000"/>
+<img src="./Lab1/Lab1BDScheme.drawio.png" alt="Схема" width="1000"/>
