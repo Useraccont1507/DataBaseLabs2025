@@ -1,6 +1,7 @@
 # Лабораторна робота 2  
 **Тема:** Перетворення ER-діаграми на реляційну схему в PostgreSQL  
 
+---
 
 ## Схема бази даних
 
@@ -53,6 +54,7 @@
   - `text TEXT NOT NULL`  
   - `createdAt TIMESTAMP WITH TIME ZONE DEFAULT NOW()`  
 - **Обмеження:** FK з `ON DELETE CASCADE` для всіх зовнішніх ключів  
+- **Особливість:** parentCommentId може бути NULL → зв’язок опціональний (кружечок на ER-діаграмі)  
 
 ### Таблиця `tags`
 - **Стовпці:**  
@@ -63,8 +65,7 @@
 - **Стовпці:**  
   - `postId INT NOT NULL` — FK → `posts(postId)`  
   - `tagId INT NOT NULL` — FK → `tags(tagId)`  
-- **Обмеження:**  
-  - `ON DELETE CASCADE`  
+- **Обмеження:** `ON DELETE CASCADE`  
 
 ---
 
