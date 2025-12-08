@@ -121,3 +121,40 @@ model posts {
 }
 ```
 <img src="changeTable.png.png" alt="" width="1000"/>
+
+**3. Видалення поля**
+
+До:
+```prisma
+model users {
+  userid                                         Int             @id @default(autoincrement())
+  email                                          String          @unique
+  password                                       String          @db.VarChar
+  nickname                                       String          @db.VarChar(16)
+  avatarimageurl                                 String?         @db.VarChar
+  createdat                                      DateTime?       @default(now()) @db.Timestamptz(6)
+  comments                                       comments[]
+  likes                                          likes[]
+  posts                                          posts[]
+  userfollowers_userfollowers_followeridTousers  userfollowers[] @relation("userfollowers_followeridTousers")
+  userfollowers_userfollowers_followingidTousers userfollowers[] @relation("userfollowers_followingidTousers")
+  postComplaint postComplaint[]
+}
+```
+Після:
+```prisma
+model users {
+  userid                                         Int             @id @default(autoincrement())
+  email                                          String          @unique
+  password                                       String          @db.VarChar
+  nickname                                       String          @db.VarChar(16)
+  avatarimageurl                                 String?         @db.VarChar
+  comments                                       comments[]
+  likes                                          likes[]
+  posts                                          posts[]
+  userfollowers_userfollowers_followeridTousers  userfollowers[] @relation("userfollowers_followeridTousers")
+  userfollowers_userfollowers_followingidTousers userfollowers[] @relation("userfollowers_followingidTousers")
+  postComplaint postComplaint[]
+}
+```
+<img src="deleteField.png.png" alt="" width="1000"/>

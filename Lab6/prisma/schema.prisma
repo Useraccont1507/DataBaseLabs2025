@@ -80,7 +80,6 @@ model users {
   password                                       String          @db.VarChar
   nickname                                       String          @db.VarChar(16)
   avatarimageurl                                 String?         @db.VarChar
-  createdat                                      DateTime?       @default(now()) @db.Timestamptz(6)
   comments                                       comments[]
   likes                                          likes[]
   posts                                          posts[]
