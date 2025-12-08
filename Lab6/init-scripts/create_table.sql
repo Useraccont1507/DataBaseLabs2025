@@ -1,8 +1,8 @@
-CREATE EXTENSION IF NOT EXISTS citext;
+
 
 CREATE TABLE users (
     userId SERIAL PRIMARY KEY,
-    email CITEXT NOT NULL,
+    email TEXT NOT NULL,
     CONSTRAINT email_format CHECK (email ~* '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$'),
     password VARCHAR NOT NULL,
     nickname VARCHAR(16) NOT NULL,
