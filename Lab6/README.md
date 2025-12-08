@@ -82,8 +82,7 @@ model posts {
   postComplaint postComplaint[]
 }
 ```
-
-<img src="addComplaint.png.png" alt="" width="1000"/>
+![a](addComplaint.png)
 
 **2. Заміна назви поля, та додавання нового**
 
@@ -120,7 +119,7 @@ model posts {
   postComplaint postComplaint[]
 }
 ```
-<img src="changeTable.png.png" alt="" width="1000"/>
+![a](changeTable.png)
 
 **3. Видалення поля**
 
@@ -157,4 +156,4 @@ model users {
   postComplaint postComplaint[]
 }
 ```
-<img src="deleteField.png.png" alt="" width="1000"/>
+![a](deleteField.png)
