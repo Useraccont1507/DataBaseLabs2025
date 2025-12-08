@@ -84,3 +84,40 @@ model posts {
 ```
 
 <img src="addComplaint.png.png" alt="" width="1000"/>
+
+**2. Заміна назви поля, та додавання нового**
+
+До:
+```prisma
+model posts {
+  postid       Int            @id @default(autoincrement())
+  userid       Int
+  title        String         @db.VarChar
+  text         String?
+  imageUrl     String?        @db.VarChar         
+  createdat    DateTime?      @default(now()) @db.Timestamptz(6)
+  comments     comments[]
+  likes        likes[]
+  users        users          @relation(fields: [userid], references: [userid], onDelete: Cascade, onUpdate: NoAction)
+  posttags     posttags[]
+  postComplaint postComplaint[]
+}
+```
+Після:
+```prisma
+model posts {
+  postid       Int            @id @default(autoincrement())
+  userid       Int
+  title        String         @db.VarChar
+  text         String?
+  imageUrlPath String?        @db.VarChar          
+  isPublished  Boolean        @default(false)     
+  createdat    DateTime?      @default(now()) @db.Timestamptz(6)
+  comments     comments[]
+  likes        likes[]
+  users        users          @relation(fields: [userid], references: [userid], onDelete: Cascade, onUpdate: NoAction)
+  posttags     posttags[]
+  postComplaint postComplaint[]
+}
+```
+<img src="changeTable.png.png" alt="" width="1000"/>

@@ -33,16 +33,17 @@ model likes {
 }
 
 model posts {
-  postid    Int        @id @default(autoincrement())
-  userid    Int
-  title     String     @db.VarChar
-  text      String?
-  imageurl  String?    @db.VarChar
-  createdat DateTime?  @default(now()) @db.Timestamptz(6)
-  comments  comments[]
-  likes     likes[]
-  users     users      @relation(fields: [userid], references: [userid], onDelete: Cascade, onUpdate: NoAction)
-  posttags  posttags[]
+  postid       Int            @id @default(autoincrement())
+  userid       Int
+  title        String         @db.VarChar
+  text         String?
+  imageUrlPath String?        @db.VarChar          
+  isPublished  Boolean        @default(false)     
+  createdat    DateTime?      @default(now()) @db.Timestamptz(6)
+  comments     comments[]
+  likes        likes[]
+  users        users          @relation(fields: [userid], references: [userid], onDelete: Cascade, onUpdate: NoAction)
+  posttags     posttags[]
   postComplaint postComplaint[]
 }
 
